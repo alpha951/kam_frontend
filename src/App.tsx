@@ -2,9 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom
 import { useAppSelector } from './store/store';
 import LoginPage from './pages/Login';
 import { AuthLayout } from './layouts/AuthLayout';
-import { MainLayout } from './layouts/MainLayout';
 import NotFound from './pages/NotFound';
-import Home from './pages/Home';
 
 const ProtectedRoute = () => {
   const { token } = useAppSelector((state) => state.auth);
@@ -38,12 +36,12 @@ function App() {
           </Route>
         </Route>
 
-        {/* Protected routes */}
+        {/* Protected routes
         <Route element={<ProtectedRoute />}>
           <Route element={<MainLayout />}>
             <Route path="/home" element={Home} />
           </Route>
-        </Route>
+        </Route> */}
 
         {/* 404 route */}
         <Route path="*" element={<NotFound />} />

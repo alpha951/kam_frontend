@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Button } from "@/components/ui/button"
 import { AuthService } from '@/services/AuthService';
 
 interface MainLayoutProps {
@@ -20,9 +19,9 @@ export function MainLayout({ children }: MainLayoutProps) {
             <header className="border-b">
                 <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                     <h1 className="text-xl font-bold">Key Account Management</h1>
-                    <Button variant="ghost" onClick={handleLogout}>
+                    <button variant="ghost" onClick={handleLogout}>
                         Logout
-                    </Button>
+                    </button>
                 </div>
             </header>
 
@@ -31,20 +30,20 @@ export function MainLayout({ children }: MainLayoutProps) {
                 {/* Sidebar */}
                 <aside className="w-64 border-r bg-muted/50">
                     <nav className="p-4 space-y-2">
-                        <Button
+                        <button
                             variant="ghost"
                             className="w-full justify-start"
                             onClick={() => navigate('/accounts')}
                         >
                             Accounts
-                        </Button>
-                        <Button
+                        </button>
+                        <button
                             variant="ghost"
                             className="w-full justify-start"
                             onClick={() => navigate('/users')}
                         >
                             Users
-                        </Button>
+                        </button>
                     </nav>
                 </aside>
 

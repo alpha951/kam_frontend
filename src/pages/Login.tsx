@@ -1,6 +1,6 @@
 import { AuthService } from '@/services/AuthService';
-import { Index as Login } from '../components/login/Index'
 import { Navigate } from 'react-router-dom';
+import LoginForm from '@/components/login/login';
 
 const LoginPage = () => {
     const handleLogin = (formData: { mobile: string; password: string }) => {
@@ -9,7 +9,9 @@ const LoginPage = () => {
     }
 
     return (
-        <Login onSubmit={handleLogin} />
+        <div className="h-screen w-full flex items-center justify-center">
+            <LoginForm onSubmit={handleLogin}/>
+        </div>
     )
 }
 

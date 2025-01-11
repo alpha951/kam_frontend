@@ -1,9 +1,5 @@
-export interface User {
-  id: string;
-  email: string;
-  name: string;
-  role: string;
-}
+import { UserRoles } from "@/types/types";
+import exp from "constants";
 
 export interface AuthState {
   user: User | null;
@@ -21,4 +17,12 @@ export interface UIState {
     type: 'success' | 'error' | 'info';
     message: string;
   }>;
+}
+
+export interface User {
+      userId: string;
+      name: string;
+      mobile: string;
+      role: UserRoles;
+      email: string;
 }

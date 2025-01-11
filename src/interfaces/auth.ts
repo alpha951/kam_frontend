@@ -1,5 +1,4 @@
 import { UserRoles } from "@/types/types";
-import exp from "constants";
 
 export interface LoginApiRequestData {
     mobile: string;

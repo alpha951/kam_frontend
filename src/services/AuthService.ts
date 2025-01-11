@@ -2,6 +2,7 @@ import { AUTH_TOKEN } from "@/utils/constants";
 import { ApiService } from "./ApiService";
 import { API_ENDPOINTS } from "@/api/endpoints";
 import { LoginApiRequestData, LoginApiResponseData } from "@/interfaces/auth";
+import {setCredentials} from "@/store/slices/authSlice.ts";
 
 class AuthService {
   static async login(mobile: string, password: string) {
@@ -13,10 +14,10 @@ class AuthService {
       } as LoginApiRequestData
     );
     if(response === undefined) {
-      // Handle error
+      //TODO: Handle error
       return;
     }
-    localStorage.setItem(AUTH_TOKEN, response.token);
+    setCredentials(response.token);
   }
 
   static logout() {
